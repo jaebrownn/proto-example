@@ -35,7 +35,7 @@ jobs:
 #        uses: bufbuild/buf-breaking-action@v1
 #        with:
 #          # The 'main' branch of the GitHub repository that defines the workspace
-#          against: "https://github.com/hockney-app/proto.git#branch=main,ref=HEAD~1"
+#          against: "https://github.com/jaebrownn/proto.git#branch=main,ref=HEAD~1"
   build:
     runs-on: ubuntu-latest
     env:
@@ -56,11 +56,13 @@ jobs:
         run: cd proto && buf generate
       # Setup .npmrc file to publish to GitHub Packages
       # This comes from the Github documentation example workflow: https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages#example-workflow
+      # NB: ensure you have setup the necessary packages: https://docs.github.com/en/enterprise-server@3.8/packages/learn-github-packages/connecting-a-repository-to-a-package
       - name: Setup .npmrc
         uses: actions/setup-node@v3
         with:
           node-version: '16.x'
           registry-url: 'https://npm.pkg.github.com'
+          scope: '@jaebrownn'
       # Publish to GitHub Packages
       - name: Publish npm package
         run: | 
