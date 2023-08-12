@@ -55,6 +55,7 @@ jobs:
       - name: Generate protobufs
         run: cd proto && buf generate
       # Setup .npmrc file to publish to GitHub Packages
+      # This comes from the Github documentation example workflow: https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages#example-workflow
       - name: Setup .npmrc
         uses: actions/setup-node@v3
         with:
