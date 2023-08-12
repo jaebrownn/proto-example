@@ -53,7 +53,7 @@ jobs:
           buf_api_token: ${{ secrets.BUF_API_TOKEN }}
       # Generate the protobuf packages
       - name: Generate protobufs
-        run: buf generate
+        run: cd proto && buf generate
       # Setup .npmrc file to publish to GitHub Packages
       - name: Setup .npmrc
         uses: actions/setup-node@v3
