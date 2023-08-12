@@ -5,21 +5,21 @@ managed:
     default: github.com/jaebrownn/proto-example/protobuf/go
 plugins:
   - plugin: buf.build/grpc/go
-    out: protobuf/go
+    out: ../protobuf/go
     opt: paths=source_relative
   - plugin: buf.build/protocolbuffers/go
-    out: protobuf/go
+    out: ../protobuf/go
     opt: paths=source_relative
   - plugin: buf.build/bufbuild/validate-go
-    out: protobuf/go
+    out: ../protobuf/go
     opt: paths=source_relative
   - plugin: buf.build/bufbuild/connect-es
-    out: protobuf/npm
+    out: ../protobuf/npm
   - plugin: buf.build/bufbuild/es
-    out: protobuf/npm
+    out: ../protobuf/npm
   - plugin: buf.build/protocolbuffers/js
-    out: protobuf/ts
+    out: ../protobuf/ts
     opt: import_style=commonjs
   - plugin: buf.build/grpc/web
-    out: protobuf/ts
+    out: ../protobuf/ts
     opt: import_style=commonjs+dts,mode=grpcwebtext
