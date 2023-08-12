@@ -12,6 +12,30 @@ on:
     branches:
       - main
 jobs:
+  # TODO: OPTIONAL - lint and check for breaking changes
+#  lint-and-breaking-change-detection:
+#    name: Lint APIs and check for breaking changes
+#    runs-on: ubuntu-latest
+#    steps:
+#      # Run `git checkout`
+#      - name: Checkout
+#        uses: actions/checkout@v3
+#      # Install the `buf` CLI
+#      - name: Setup buf
+#        uses: bufbuild/buf-setup-action@v1
+#        with:
+#          buf_user: ${{ secrets.BUF_USER }}
+#          buf_api_token: ${{ secrets.BUF_API_TOKEN }}
+#      # Lint the Buf modules in the root workspace
+#      - name: Lint
+#        uses: bufbuild/buf-lint-action@v1
+#      # Detect breaking changes for the Buf modules in the root workspace
+#      # against the current `main` branch
+#      - name: Check for breaking changes against `main`
+#        uses: bufbuild/buf-breaking-action@v1
+#        with:
+#          # The 'main' branch of the GitHub repository that defines the workspace
+#          against: "https://github.com/hockney-app/proto.git#branch=main,ref=HEAD~1"
   build:
     runs-on: ubuntu-latest
     env:
