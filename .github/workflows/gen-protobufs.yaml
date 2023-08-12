@@ -1,0 +1,54 @@
+# This workflow uses the `buf` CLI to generate protobuf packages and then publishes them to GitHub Packages.
+# The required secrets are:
+# - BUF_USER: The username for the buf CLI
+# - BUF_API_TOKEN: The API token for the buf CLI
+# - GITHUB_TOKEN: The GitHub token with permissions for publishing to GitHub Packages. This is automatically included
+#   in the GitHub Actions environment, so you don't need to create a secret for it.
+name: Generate and Publish protobufs
+on:
+  push:
+    paths:
+      - proto/**
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      CI_COMMIT_MESSAGE: Generate Protobufs
+      CI_COMMIT_AUTHOR: Continuous Integration
+    steps:
+      # Run `git checkout`
+      - name: Checkout
+        uses: actions/checkout@v3
+      # Setup the `buf` CLI
+      - name: Setup buf
+        uses: bufbuild/buf-setup-action@v1
+        with:
+          buf_user: ${{ secrets.BUF_USER }}
+          buf_api_token: ${{ secrets.BUF_API_TOKEN }}
+      # Generate the protobuf packages
+      - name: Generate protobufs
+        run: buf generate
+      # Setup .npmrc file to publish to GitHub Packages
+      - name: Setup .npmrc
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16.x'
+          registry-url: 'https://npm.pkg.github.com'
+      # Publish to GitHub Packages
+      - name: Publish npm package
+        run: | 
+          cd protobuf/npm
+          npm publish
+          npm version patch
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: git commit and push updates
+        continue-on-error: true
+        run: |
+          git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
+          git config --global user.email "username@users.noreply.github.com"
+          git add protobuf
+          git commit -m "${{ env.CI_COMMIT_MESSAGE }}"
+          git push
