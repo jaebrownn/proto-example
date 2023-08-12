@@ -9,3 +9,8 @@ running on Google Cloud Run. It also contains some useful workflows
 4. In your repo settings, navigate to "Secrets and variables" > "Actions" and select "New repository secret"
 5. Create a secret with name "BUF_API_TOKEN" and paste the value of your token.
 6. Add another secret with name "BUF_USER" and provide your buf username.
+
+# Setting up repository to be able to publish to Github Packages
+1. Navigate to the repository settings and select "Actions" > "General"
+2. Under Workflow permissions, select "Read and write permissions"
+3. Save the changes
