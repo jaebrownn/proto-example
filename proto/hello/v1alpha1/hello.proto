@@ -16,7 +16,6 @@ message SayHelloRequest {
   // The name of the person to greet.
   string name = 1;
 }
-
 // Response message for the SayHello method.
 message SayHelloResponse {
   // The greeting.
