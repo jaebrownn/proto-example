@@ -16,7 +16,7 @@ your own projects.
 2. Under Workflow permissions, select "Read and write permissions"
 3. Save the changes
 
-## Configuring Google Cloud Build to build and deploy to Cloud Run
+## Configuring Google Cloud Build to build and deploy backend services to Cloud Run
 1. Create a Docker repository in Artifact Registry for storing your images for backend services. I have
 called this "services-artifacts"
 2. Setup a build trigger in Cloud Build to listen for changes to the backends, and build and deploy accordingly
@@ -25,3 +25,5 @@ in line with the cloudbuild.yaml for the service. To do so, we must also connect
    2. Then select "Create Rigger" and create a trigger similar to the following:
 ![img.png](img.png)
 3. Upon pushing changes to our hello-v1alpha1 backend, this trigger will automatically kick of the building and deploying of our service to cloud run
+4. TODO: you can set up your build triggers in different Google Projects to listen to specific branches. For example, a Production deployment that 
+listens to the "main" branch, and a Development deployment that listens to the "dev" branch. This is useful for testing out changes before deploying to production.
