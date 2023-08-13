@@ -1,0 +1,31 @@
+# Need YAML to set --build-arg
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - -c
+      - |
+        docker build -t europe-west1-docker.pkg.dev/${PROJECT_ID}/services-artifacts/hello-v1alpha1 \
+        -f Dockerfile backends/hello/v1alpha1/
+#        TODO: add this if your go packages are hosted privately
+#        --build-arg=GIT_PASSWORD=$$GIT_PASSWORD --build-arg=GIT_USERNAME=$$GIT_USERNAME \
+    entrypoint: bash
+    secretEnv: ['GIT_PASSWORD', 'GIT_USERNAME']
+  # Push the container image to Artifact Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [ 'push', 'europe-west1-docker.pkg.dev/${PROJECT_ID}/services-artifacts/hello-v1alpha1' ]
+  # Deploy container to Cloud run
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args: [ 'run', 'deploy', 'hello-v1alpha1', '--image', 'europe-west1-docker.pkg.dev/${PROJECT_ID}/services-artifacts/hello-v1alpha1', '--region', 'europe-west1',
+            '--update-env-vars', 'PROJECT_ID=${PROJECT_ID}', '--use-http2']
+images: ['europe-west1-docker.pkg.dev/${PROJECT_ID}/services-artifacts/users-v1alpha1']
+options:
+  logging: CLOUD_LOGGING_ONLY
+# TODO: ensure you have setup the secrets in Cloud Secrets Manager and uncomment this to inject
+# git credentials into the build for private go packages
+#availableSecrets:
+#  secretManager:
+#    - versionName: projects/${PROJECT_ID}/secrets/cloudbuild-github-user-PERSONAL_ACCESS_TOKEN/versions/latest
+#      env: 'GIT_PASSWORD'
+#    - versionName: projects/${PROJECT_ID}/secrets/cloudbuild-github-user-USERNAME/versions/latest
+#      env: 'GIT_USERNAME'
