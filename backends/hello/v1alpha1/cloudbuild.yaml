@@ -5,7 +5,7 @@ steps:
       - -c
       - |
         docker build -t europe-west1-docker.pkg.dev/${PROJECT_ID}/services-artifacts/hello-v1alpha1 \
-        -f Dockerfile backends/hello/v1alpha1/
+        -f backends/Dockerfile backends/hello/v1alpha1/
 #        TODO: add this if your go packages are hosted privately
 #        --build-arg=GIT_PASSWORD=$$GIT_PASSWORD --build-arg=GIT_USERNAME=$$GIT_USERNAME \
     entrypoint: bash
