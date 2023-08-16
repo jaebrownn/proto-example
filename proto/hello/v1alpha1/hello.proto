@@ -9,6 +9,8 @@ option go_package="github.com/jaebrownn/proto-example/protobuf/go/hello/v1alpha1
 service HelloService {
   // SayHello returns a greeting message to the caller of the method.
   rpc SayHello (SayHelloRequest) returns (SayHelloResponse) {};
+  // SayGoobye returns a goodbye message to the caller of the method.
+  rpc SayGoodbye (SayGoodbyeRequest) returns (SayGoodbyeResponse) {};
 }
 
 // Request message for the SayHello method.
@@ -20,4 +22,15 @@ message SayHelloRequest {
 message SayHelloResponse {
   // The greeting.
   string greeting = 1;
+}
+
+// Request message for the SayGoodbye method.
+message SayGoodbyeRequest {
+  // The name of the person to greet.
+  string name = 1;
+}
+// Response message for the SayGoodbye method.
+message SayGoodbyeResponse {
+  // The goodbye.
+  string goodbye = 1;
 }
