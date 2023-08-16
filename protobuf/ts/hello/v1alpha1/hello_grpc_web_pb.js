@@ -136,5 +136,66 @@ proto.hello.v1alpha1.HelloServicePromiseClient.prototype.sayHello =
 };
 
 
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.hello.v1alpha1.SayGoodbyeRequest,
+ *   !proto.hello.v1alpha1.SayGoodbyeResponse>}
+ */
+const methodDescriptor_HelloService_SayGoodbye = new grpc.web.MethodDescriptor(
+  '/hello.v1alpha1.HelloService/SayGoodbye',
+  grpc.web.MethodType.UNARY,
+  proto.hello.v1alpha1.SayGoodbyeRequest,
+  proto.hello.v1alpha1.SayGoodbyeResponse,
+  /**
+   * @param {!proto.hello.v1alpha1.SayGoodbyeRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.hello.v1alpha1.SayGoodbyeResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.hello.v1alpha1.SayGoodbyeRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.hello.v1alpha1.SayGoodbyeResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.hello.v1alpha1.SayGoodbyeResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.hello.v1alpha1.HelloServiceClient.prototype.sayGoodbye =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/hello.v1alpha1.HelloService/SayGoodbye',
+      request,
+      metadata || {},
+      methodDescriptor_HelloService_SayGoodbye,
+      callback);
+};
+
+
+/**
+ * @param {!proto.hello.v1alpha1.SayGoodbyeRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.hello.v1alpha1.SayGoodbyeResponse>}
+ *     Promise that resolves to the response
+ */
+proto.hello.v1alpha1.HelloServicePromiseClient.prototype.sayGoodbye =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/hello.v1alpha1.HelloService/SayGoodbye',
+      request,
+      metadata || {},
+      methodDescriptor_HelloService_SayGoodbye);
+};
+
+
 module.exports = proto.hello.v1alpha1;
 

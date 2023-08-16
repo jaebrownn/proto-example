@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { SayHelloRequest, SayHelloResponse } from "./hello_pb.js";
+import { SayGoodbyeRequest, SayGoodbyeResponse, SayHelloRequest, SayHelloResponse } from "./hello_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -24,6 +24,17 @@ export const HelloService = {
       name: "SayHello",
       I: SayHelloRequest,
       O: SayHelloResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * SayGoobye returns a goodbye message to the caller of the method.
+     *
+     * @generated from rpc hello.v1alpha1.HelloService.SayGoodbye
+     */
+    sayGoodbye: {
+      name: "SayGoodbye",
+      I: SayGoodbyeRequest,
+      O: SayGoodbyeResponse,
       kind: MethodKind.Unary,
     },
   }

@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { SayHelloRequest, SayHelloResponse } from "./hello_pb.js";
+import { SayGoodbyeRequest, SayGoodbyeResponse, SayHelloRequest, SayHelloResponse } from "./hello_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -24,6 +24,17 @@ export declare const HelloService: {
       readonly name: "SayHello",
       readonly I: typeof SayHelloRequest,
       readonly O: typeof SayHelloResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * SayGoobye returns a goodbye message to the caller of the method.
+     *
+     * @generated from rpc hello.v1alpha1.HelloService.SayGoodbye
+     */
+    readonly sayGoodbye: {
+      readonly name: "SayGoodbye",
+      readonly I: typeof SayGoodbyeRequest,
+      readonly O: typeof SayGoodbyeResponse,
       readonly kind: MethodKind.Unary,
     },
   }

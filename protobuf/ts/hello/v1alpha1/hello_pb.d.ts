@@ -38,3 +38,39 @@ export namespace SayHelloResponse {
   }
 }
 
+export class SayGoodbyeRequest extends jspb.Message {
+  getName(): string;
+  setName(value: string): SayGoodbyeRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SayGoodbyeRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: SayGoodbyeRequest): SayGoodbyeRequest.AsObject;
+  static serializeBinaryToWriter(message: SayGoodbyeRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SayGoodbyeRequest;
+  static deserializeBinaryFromReader(message: SayGoodbyeRequest, reader: jspb.BinaryReader): SayGoodbyeRequest;
+}
+
+export namespace SayGoodbyeRequest {
+  export type AsObject = {
+    name: string,
+  }
+}
+
+export class SayGoodbyeResponse extends jspb.Message {
+  getGoodbye(): string;
+  setGoodbye(value: string): SayGoodbyeResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SayGoodbyeResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SayGoodbyeResponse): SayGoodbyeResponse.AsObject;
+  static serializeBinaryToWriter(message: SayGoodbyeResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SayGoodbyeResponse;
+  static deserializeBinaryFromReader(message: SayGoodbyeResponse, reader: jspb.BinaryReader): SayGoodbyeResponse;
+}
+
+export namespace SayGoodbyeResponse {
+  export type AsObject = {
+    goodbye: string,
+  }
+}
+

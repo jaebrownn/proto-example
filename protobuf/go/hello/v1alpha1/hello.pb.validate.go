@@ -238,3 +238,211 @@ var _ interface {
 	Cause() error
 	ErrorName() string
 } = SayHelloResponseValidationError{}
+
+// Validate checks the field values on SayGoodbyeRequest with the rules defined
+// in the proto definition for this message. If any rules are violated, the
+// first error encountered is returned, or nil if there are no violations.
+func (m *SayGoodbyeRequest) Validate() error {
+	return m.validate(false)
+}
+
+// ValidateAll checks the field values on SayGoodbyeRequest with the rules
+// defined in the proto definition for this message. If any rules are
+// violated, the result is a list of violation errors wrapped in
+// SayGoodbyeRequestMultiError, or nil if none found.
+func (m *SayGoodbyeRequest) ValidateAll() error {
+	return m.validate(true)
+}
+
+func (m *SayGoodbyeRequest) validate(all bool) error {
+	if m == nil {
+		return nil
+	}
+
+	var errors []error
+
+	// no validation rules for Name
+
+	if len(errors) > 0 {
+		return SayGoodbyeRequestMultiError(errors)
+	}
+
+	return nil
+}
+
+// SayGoodbyeRequestMultiError is an error wrapping multiple validation errors
+// returned by SayGoodbyeRequest.ValidateAll() if the designated constraints
+// aren't met.
+type SayGoodbyeRequestMultiError []error
+
+// Error returns a concatenation of all the error messages it wraps.
+func (m SayGoodbyeRequestMultiError) Error() string {
+	var msgs []string
+	for _, err := range m {
+		msgs = append(msgs, err.Error())
+	}
+	return strings.Join(msgs, "; ")
+}
+
+// AllErrors returns a list of validation violation errors.
+func (m SayGoodbyeRequestMultiError) AllErrors() []error { return m }
+
+// SayGoodbyeRequestValidationError is the validation error returned by
+// SayGoodbyeRequest.Validate if the designated constraints aren't met.
+type SayGoodbyeRequestValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e SayGoodbyeRequestValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e SayGoodbyeRequestValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e SayGoodbyeRequestValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e SayGoodbyeRequestValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e SayGoodbyeRequestValidationError) ErrorName() string {
+	return "SayGoodbyeRequestValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e SayGoodbyeRequestValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sSayGoodbyeRequest.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = SayGoodbyeRequestValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = SayGoodbyeRequestValidationError{}
+
+// Validate checks the field values on SayGoodbyeResponse with the rules
+// defined in the proto definition for this message. If any rules are
+// violated, the first error encountered is returned, or nil if there are no violations.
+func (m *SayGoodbyeResponse) Validate() error {
+	return m.validate(false)
+}
+
+// ValidateAll checks the field values on SayGoodbyeResponse with the rules
+// defined in the proto definition for this message. If any rules are
+// violated, the result is a list of violation errors wrapped in
+// SayGoodbyeResponseMultiError, or nil if none found.
+func (m *SayGoodbyeResponse) ValidateAll() error {
+	return m.validate(true)
+}
+
+func (m *SayGoodbyeResponse) validate(all bool) error {
+	if m == nil {
+		return nil
+	}
+
+	var errors []error
+
+	// no validation rules for Goodbye
+
+	if len(errors) > 0 {
+		return SayGoodbyeResponseMultiError(errors)
+	}
+
+	return nil
+}
+
+// SayGoodbyeResponseMultiError is an error wrapping multiple validation errors
+// returned by SayGoodbyeResponse.ValidateAll() if the designated constraints
+// aren't met.
+type SayGoodbyeResponseMultiError []error
+
+// Error returns a concatenation of all the error messages it wraps.
+func (m SayGoodbyeResponseMultiError) Error() string {
+	var msgs []string
+	for _, err := range m {
+		msgs = append(msgs, err.Error())
+	}
+	return strings.Join(msgs, "; ")
+}
+
+// AllErrors returns a list of validation violation errors.
+func (m SayGoodbyeResponseMultiError) AllErrors() []error { return m }
+
+// SayGoodbyeResponseValidationError is the validation error returned by
+// SayGoodbyeResponse.Validate if the designated constraints aren't met.
+type SayGoodbyeResponseValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e SayGoodbyeResponseValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e SayGoodbyeResponseValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e SayGoodbyeResponseValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e SayGoodbyeResponseValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e SayGoodbyeResponseValidationError) ErrorName() string {
+	return "SayGoodbyeResponseValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e SayGoodbyeResponseValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sSayGoodbyeResponse.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = SayGoodbyeResponseValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = SayGoodbyeResponseValidationError{}

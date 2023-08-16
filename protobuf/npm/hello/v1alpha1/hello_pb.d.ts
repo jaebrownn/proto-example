@@ -62,3 +62,59 @@ export declare class SayHelloResponse extends Message<SayHelloResponse> {
   static equals(a: SayHelloResponse | PlainMessage<SayHelloResponse> | undefined, b: SayHelloResponse | PlainMessage<SayHelloResponse> | undefined): boolean;
 }
 
+/**
+ * Request message for the SayGoodbye method.
+ *
+ * @generated from message hello.v1alpha1.SayGoodbyeRequest
+ */
+export declare class SayGoodbyeRequest extends Message<SayGoodbyeRequest> {
+  /**
+   * The name of the person to greet.
+   *
+   * @generated from field: string name = 1;
+   */
+  name: string;
+
+  constructor(data?: PartialMessage<SayGoodbyeRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "hello.v1alpha1.SayGoodbyeRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SayGoodbyeRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SayGoodbyeRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SayGoodbyeRequest;
+
+  static equals(a: SayGoodbyeRequest | PlainMessage<SayGoodbyeRequest> | undefined, b: SayGoodbyeRequest | PlainMessage<SayGoodbyeRequest> | undefined): boolean;
+}
+
+/**
+ * Response message for the SayGoodbye method.
+ *
+ * @generated from message hello.v1alpha1.SayGoodbyeResponse
+ */
+export declare class SayGoodbyeResponse extends Message<SayGoodbyeResponse> {
+  /**
+   * The goodbye.
+   *
+   * @generated from field: string goodbye = 1;
+   */
+  goodbye: string;
+
+  constructor(data?: PartialMessage<SayGoodbyeResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "hello.v1alpha1.SayGoodbyeResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SayGoodbyeResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SayGoodbyeResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SayGoodbyeResponse;
+
+  static equals(a: SayGoodbyeResponse | PlainMessage<SayGoodbyeResponse> | undefined, b: SayGoodbyeResponse | PlainMessage<SayGoodbyeResponse> | undefined): boolean;
+}
+

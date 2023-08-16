@@ -29,3 +29,27 @@ export const SayHelloResponse = proto3.makeMessageType(
   ],
 );
 
+/**
+ * Request message for the SayGoodbye method.
+ *
+ * @generated from message hello.v1alpha1.SayGoodbyeRequest
+ */
+export const SayGoodbyeRequest = proto3.makeMessageType(
+  "hello.v1alpha1.SayGoodbyeRequest",
+  () => [
+    { no: 1, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * Response message for the SayGoodbye method.
+ *
+ * @generated from message hello.v1alpha1.SayGoodbyeResponse
+ */
+export const SayGoodbyeResponse = proto3.makeMessageType(
+  "hello.v1alpha1.SayGoodbyeResponse",
+  () => [
+    { no: 1, name: "goodbye", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+

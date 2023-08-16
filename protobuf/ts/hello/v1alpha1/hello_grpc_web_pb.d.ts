@@ -15,6 +15,13 @@ export class HelloServiceClient {
                response: hello_v1alpha1_hello_pb.SayHelloResponse) => void
   ): grpcWeb.ClientReadableStream<hello_v1alpha1_hello_pb.SayHelloResponse>;
 
+  sayGoodbye(
+    request: hello_v1alpha1_hello_pb.SayGoodbyeRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: hello_v1alpha1_hello_pb.SayGoodbyeResponse) => void
+  ): grpcWeb.ClientReadableStream<hello_v1alpha1_hello_pb.SayGoodbyeResponse>;
+
 }
 
 export class HelloServicePromiseClient {
@@ -26,6 +33,11 @@ export class HelloServicePromiseClient {
     request: hello_v1alpha1_hello_pb.SayHelloRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<hello_v1alpha1_hello_pb.SayHelloResponse>;
+
+  sayGoodbye(
+    request: hello_v1alpha1_hello_pb.SayGoodbyeRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<hello_v1alpha1_hello_pb.SayGoodbyeResponse>;
 
 }
 
