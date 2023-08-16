@@ -19,7 +19,7 @@ steps:
     entrypoint: gcloud
     args: [ 'run', 'deploy', 'hello-v1alpha1', '--image', 'europe-west1-docker.pkg.dev/${PROJECT_ID}/services-artifacts/hello-v1alpha1', '--region', 'europe-west1',
             '--update-env-vars', 'PROJECT_ID=${PROJECT_ID}', '--use-http2']
-images: ['europe-west1-docker.pkg.dev/${PROJECT_ID}/services-artifacts/users-v1alpha1']
+images: ['europe-west1-docker.pkg.dev/${PROJECT_ID}/services-artifacts/hello-v1alpha1']
 options:
   logging: CLOUD_LOGGING_ONLY
 # TODO: ensure you have setup the secrets in Cloud Secrets Manager and uncomment this to inject
