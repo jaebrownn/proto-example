@@ -20,6 +20,10 @@ func (s *HelloServiceServer) SayHello(ctx context.Context, req *pb.SayHelloReque
 	return &pb.SayHelloResponse{Greeting: "Hello " + req.Name}, nil
 }
 
+func (s *HelloServiceServer) SayGoodbye(ctx context.Context, req *pb.SayGoodbyeRequest) (*pb.SayGoodbyeResponse, error) {
+	return &pb.SayGoodbyeResponse{Goodbye: "Goodbye " + req.Name}, nil
+}
+
 func main() {
 	ctx := context.Background()
 

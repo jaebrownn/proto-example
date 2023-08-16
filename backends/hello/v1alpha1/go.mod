@@ -3,7 +3,7 @@ go 1.20
 module hello.v1alpha1
 
 require (
-	github.com/jaebrownn/proto-example/protobuf/go v0.0.0-20230813074851-4b000df2bcb4
+	github.com/jaebrownn/proto-example/protobuf/go v0.0.0-20230816203459-125b879bda6f
 	go.alis.build/alog v0.0.18
 	google.golang.org/grpc v1.57.0
 )

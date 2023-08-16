@@ -3,8 +3,8 @@ github.com/golang/protobuf v1.5.3 h1:KhyjKVUg7Usr/dYsdSqoFveMYd5ko72D+zANwlG1mmg
 github.com/golang/protobuf v1.5.3/go.mod h1:XVQd3VNwM+JqD3oG2Ue2ip4fOMUkwXdXDdiuN0vRsmY=
 github.com/google/go-cmp v0.5.5/go.mod h1:v8dTdLbMG2kIc/vJvl+f65V22dbkXbowE6jgT/gNBxE=
 github.com/google/go-cmp v0.5.9 h1:O2Tfq5qg4qc4AmwVlvv0oLiVAGB7enBSJ2x2DqQFi38=
-github.com/jaebrownn/proto-example/protobuf/go v0.0.0-20230813074851-4b000df2bcb4 h1:H7Icws19TX3/KpKQ83TkJvu33Lzy3yw/mg/SxRKZaEM=
-github.com/jaebrownn/proto-example/protobuf/go v0.0.0-20230813074851-4b000df2bcb4/go.mod h1:6hpd6gjCIwHkIBDOHLF1qBLU1EZxO/Lupp06/QqLJ+k=
+github.com/jaebrownn/proto-example/protobuf/go v0.0.0-20230816203459-125b879bda6f h1:twOuHUu5FBXag/6yH0bvggqeF0ajhgYwO99PmjWmG28=
+github.com/jaebrownn/proto-example/protobuf/go v0.0.0-20230816203459-125b879bda6f/go.mod h1:6hpd6gjCIwHkIBDOHLF1qBLU1EZxO/Lupp06/QqLJ+k=
 go.alis.build/alog v0.0.18 h1:Rsk5TL6OBrKU7H/wug7mxQsPTZSFiFLTet/OlV7yBDE=
 go.alis.build/alog v0.0.18/go.mod h1:fa1wnRcr3rJDXPF3j6ghf1p53koT05awGVePj/qzajo=
 golang.org/x/net v0.9.0 h1:aWJ/m6xSmxWBx+V0XRHTlrYrPG56jKsLdTFmsSsCzOM=
