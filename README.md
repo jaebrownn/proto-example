@@ -29,6 +29,14 @@ can then be used in frontend applications to consume the API.
 2. Under Workflow permissions, select "Read and write permissions"
 3. Save the changes
 
+### Installing packages
+To install the npm package, you must setup a .npmrc file in your project root with the following contents:
+
+```text
+@jaebrownn:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken={YOUR_GITHUB_TOKEN}
+```
+
 ## Google Cloud Platform
 This project uses Google Cloud Platform for hosting the backend services. The services are hosted on Cloud Run, and
 Cloud build is used to build the docker images and deploy the services. The docker images are stored in Artifact Registry.

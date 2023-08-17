@@ -46,6 +46,7 @@ build/
 node_modules/
 package.lock
 .firebase/
+.npmrc
 
 # Local env file
 !local.env
